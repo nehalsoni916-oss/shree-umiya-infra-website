@@ -1,0 +1,91 @@
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e9ecef;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#ffa500;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#87ceeb;stop-opacity:0.4" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#heroGradient)"/>
+  
+  <!-- Sky with gradient -->
+  <rect x="0" y="0" width="600" height="250" fill="url(#skyGradient)"/>
+  
+  <!-- Electrical transmission tower (pylon) -->
+  <g transform="translate(200, 150)">
+    <!-- Main tower structure -->
+    <rect x="0" y="0" width="8" height="200" fill="#2c3e50"/>
+    <rect x="-20" y="50" width="48" height="6" fill="#2c3e50"/>
+    <rect x="-20" y="100" width="48" height="6" fill="#2c3e50"/>
+    <rect x="-20" y="150" width="48" height="6" fill="#2c3e50"/>
+    
+    <!-- Cross braces -->
+    <line x1="-15" y1="50" x2="15" y2="100" stroke="#2c3e50" stroke-width="3"/>
+    <line x1="15" y1="50" x2="-15" y2="100" stroke="#2c3e50" stroke-width="3"/>
+    <line x1="-15" y1="100" x2="15" y2="150" stroke="#2c3e50" stroke-width="3"/>
+    <line x1="15" y1="100" x2="-15" y2="150" stroke="#2c3e50" stroke-width="3"/>
+    
+    <!-- Power lines -->
+    <line x1="-100" y1="60" x2="100" y2="60" stroke="#ff6b35" stroke-width="4"/>
+    <line x1="-100" y1="110" x2="100" y2="110" stroke="#ff6b35" stroke-width="4"/>
+    <line x1="-100" y1="160" x2="100" y2="160" stroke="#ff6b35" stroke-width="4"/>
+  </g>
+  
+  <!-- Wind turbines in background -->
+  <g transform="translate(50, 100)">
+    <!-- Turbine 1 -->
+    <rect x="0" y="0" width="4" height="80" fill="#34495e"/>
+    <circle cx="2" cy="0" r="25" fill="#e9ecef" stroke="#2c3e50" stroke-width="2"/>
+    <line x1="2" y1="0" x2="2" y2="-20" stroke="#2c3e50" stroke-width="2"/>
+  </g>
+  
+  <g transform="translate(450, 80)">
+    <!-- Turbine 2 -->
+    <rect x="0" y="0" width="4" height="100" fill="#34495e"/>
+    <circle cx="2" cy="0" r="30" fill="#e9ecef" stroke="#2c3e50" stroke-width="2"/>
+    <line x1="2" y1="0" x2="2" y2="-25" stroke="#2c3e50" stroke-width="2"/>
+  </g>
+  
+  <!-- Industrial facility with chimneys -->
+  <g transform="translate(300, 200)">
+    <rect x="0" y="0" width="120" height="60" fill="#34495e"/>
+    <rect x="20" y="0" width="20" height="40" fill="#2c3e50"/>
+    <rect x="60" y="0" width="20" height="50" fill="#2c3e50"/>
+    <rect x="100" y="0" width="20" height="35" fill="#2c3e50"/>
+    
+    <!-- Windows -->
+    <rect x="10" y="10" width="8" height="8" fill="#ff6b35"/>
+    <rect x="25" y="10" width="8" height="8" fill="#ff6b35"/>
+    <rect x="50" y="10" width="8" height="8" fill="#ff6b35"/>
+    <rect x="65" y="10" width="8" height="8" fill="#ff6b35"/>
+    <rect x="90" y="10" width="8" height="8" fill="#ff6b35"/>
+    <rect x="105" y="10" width="8" height="8" fill="#ff6b35"/>
+  </g>
+  
+  <!-- Electrical workers -->
+  <g transform="translate(150, 300)">
+    <!-- Worker 1 -->
+    <circle cx="0" cy="0" r="8" fill="#ff6b35"/>
+    <rect x="-6" y="8" width="12" height="20" fill="#2c3e50"/>
+    <rect x="-8" y="28" width="6" height="15" fill="#2c3e50"/>
+    <rect x="2" y="28" width="6" height="15" fill="#2c3e50"/>
+  </g>
+  
+  <g transform="translate(350, 320)">
+    <!-- Worker 2 -->
+    <circle cx="0" cy="0" r="8" fill="#ff6b35"/>
+    <rect x="-6" y="8" width="12" height="20" fill="#2c3e50"/>
+    <rect x="-8" y="28" width="6" height="15" fill="#2c3e50"/>
+    <rect x="2" y="28" width="6" height="15" fill="#2c3e50"/>
+  </g>
+  
+  <!-- Text overlay -->
+  <text x="300" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#2c3e50">Professional Electrical Infrastructure Solutions</text>
+  <text x="300" y="80" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#7f8c8d">Powering industries with reliable electrical systems and expert maintenance services</text>
+</svg>

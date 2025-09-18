@@ -1,0 +1,56 @@
+{
+  "name": "shree-umiya-infra-website",
+  "version": "1.0.0",
+  "description": "Professional electrical infrastructure solutions website for Shree Umiya Infra Project Pvt Ltd with modern design and security features",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "echo 'No build process needed for static site'",
+    "test": "jest",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "security-audit": "npm audit",
+    "deploy": "echo 'Deploy to your hosting platform'"
+  },
+  "keywords": [
+    "electrical",
+    "infrastructure",
+    "electrical-installation",
+    "electrical-maintenance",
+    "website",
+    "nodejs",
+    "express",
+    "security"
+  ],
+  "author": "Shree Umiya Infra Project Pvt Ltd",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "express-rate-limit": "^7.1.5",
+    "express-validator": "^7.0.1",
+    "validator": "^13.11.0",
+    "nodemailer": "^6.9.7",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "jest": "^29.7.0",
+    "eslint": "^8.55.0",
+    "supertest": "^6.3.3"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shreeumiyahr/website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shreeumiyahr/website/issues"
+  },
+  "homepage": "https://shreeumiyainfra.com"
+}

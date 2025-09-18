@@ -1,0 +1,130 @@
+<svg width="500" height="350" viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="aboutGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f8f9fa;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="500" height="350" fill="url(#aboutGradient)"/>
+  
+  <!-- Modern electrical control room -->
+  <rect x="50" y="200" width="400" height="100" fill="#e9ecef"/>
+  
+  <!-- Control panels -->
+  <rect x="80" y="150" width="80" height="60" fill="#2c3e50"/>
+  <rect x="180" y="150" width="80" height="60" fill="#2c3e50"/>
+  <rect x="280" y="150" width="80" height="60" fill="#2c3e50"/>
+  <rect x="380" y="150" width="80" height="60" fill="#2c3e50"/>
+  
+  <!-- Control panel details -->
+  <rect x="90" y="160" width="15" height="10" fill="#ff6b35"/>
+  <rect x="110" y="160" width="15" height="10" fill="#ff6b35"/>
+  <rect x="130" y="160" width="15" height="10" fill="#ff6b35"/>
+  <rect x="150" y="160" width="15" height="10" fill="#ff6b35"/>
+  
+  <rect x="190" y="160" width="15" height="10" fill="#ff6b35"/>
+  <rect x="210" y="160" width="15" height="10" fill="#ff6b35"/>
+  <rect x="230" y="160" width="15" height="10" fill="#ff6b35"/>
+  <rect x="250" y="160" width="15" height="10" fill="#ff6b35"/>
+  
+  <rect x="290" y="160" width="15" height="10" fill="#ff6b35"/>
+  <rect x="310" y="160" width="15" height="10" fill="#ff6b35"/>
+  <rect x="330" y="160" width="15" height="10" fill="#ff6b35"/>
+  <rect x="350" y="160" width="15" height="10" fill="#ff6b35"/>
+  
+  <rect x="390" y="160" width="15" height="10" fill="#ff6b35"/>
+  <rect x="410" y="160" width="15" height="10" fill="#ff6b35"/>
+  <rect x="430" y="160" width="15" height="10" fill="#ff6b35"/>
+  <rect x="450" y="160" width="15" height="10" fill="#ff6b35"/>
+  
+  <!-- Electrical engineers working -->
+  <g transform="translate(120, 220)">
+    <!-- Engineer 1 -->
+    <circle cx="0" cy="0" r="10" fill="#ff6b35"/>
+    <rect x="-8" y="10" width="16" height="25" fill="#2c3e50"/>
+    <rect x="-10" y="35" width="8" height="20" fill="#2c3e50"/>
+    <rect x="2" y="35" width="8" height="20" fill="#2c3e50"/>
+    
+    <!-- Hard hat -->
+    <ellipse cx="0" cy="-5" rx="12" ry="8" fill="#ffa500"/>
+  </g>
+  
+  <g transform="translate(220, 220)">
+    <!-- Engineer 2 -->
+    <circle cx="0" cy="0" r="10" fill="#ff6b35"/>
+    <rect x="-8" y="10" width="16" height="25" fill="#2c3e50"/>
+    <rect x="-10" y="35" width="8" height="20" fill="#2c3e50"/>
+    <rect x="2" y="35" width="8" height="20" fill="#2c3e50"/>
+    
+    <!-- Hard hat -->
+    <ellipse cx="0" cy="-5" rx="12" ry="8" fill="#ffa500"/>
+  </g>
+  
+  <g transform="translate(320, 220)">
+    <!-- Engineer 3 -->
+    <circle cx="0" cy="0" r="10" fill="#ff6b35"/>
+    <rect x="-8" y="10" width="16" height="25" fill="#2c3e50"/>
+    <rect x="-10" y="35" width="8" height="20" fill="#2c3e50"/>
+    <rect x="2" y="35" width="8" height="20" fill="#2c3e50"/>
+    
+    <!-- Hard hat -->
+    <ellipse cx="0" cy="-5" rx="12" ry="8" fill="#ffa500"/>
+  </g>
+  
+  <!-- Electrical equipment -->
+  <rect x="100" y="250" width="30" height="20" fill="#34495e"/>
+  <rect x="140" y="250" width="30" height="20" fill="#34495e"/>
+  <rect x="180" y="250" width="30" height="20" fill="#34495e"/>
+  <rect x="220" y="250" width="30" height="20" fill="#34495e"/>
+  <rect x="260" y="250" width="30" height="20" fill="#34495e"/>
+  <rect x="300" y="250" width="30" height="20" fill="#34495e"/>
+  <rect x="340" y="250" width="30" height="20" fill="#34495e"/>
+  
+  <!-- Cables and wiring -->
+  <path d="M 80 180 Q 100 200 120 180" stroke="#ff6b35" stroke-width="3" fill="none"/>
+  <path d="M 200 180 Q 220 200 240 180" stroke="#ff6b35" stroke-width="3" fill="none"/>
+  <path d="M 320 180 Q 340 200 360 180" stroke="#ff6b35" stroke-width="3" fill="none"/>
+  
+  <!-- Safety equipment -->
+  <g transform="translate(400, 250)">
+    <!-- Safety equipment box -->
+    <rect x="0" y="0" width="40" height="30" fill="#ffa500" stroke="#ff6b35" stroke-width="2"/>
+    <text x="20" y="20" font-family="Arial, sans-serif" font-size="8" text-anchor="middle" fill="#000000">SAFETY</text>
+  </g>
+  
+  <!-- Windows with electrical symbols -->
+  <rect x="50" y="50" width="80" height="100" fill="#87ceeb" opacity="0.3"/>
+  <rect x="150" y="50" width="80" height="100" fill="#87ceeb" opacity="0.3"/>
+  <rect x="250" y="50" width="80" height="100" fill="#87ceeb" opacity="0.3"/>
+  <rect x="350" y="50" width="80" height="100" fill="#87ceeb" opacity="0.3"/>
+  
+  <!-- Electrical symbols in windows -->
+  <g transform="translate(90, 100)">
+    <!-- Lightning bolt symbol -->
+    <path d="M 0 0 L 10 -20 L 5 -20 L 15 0 L 10 0 L 0 20 Z" fill="#ff6b35"/>
+  </g>
+  
+  <g transform="translate(190, 100)">
+    <!-- Power symbol -->
+    <circle cx="0" cy="0" r="15" fill="none" stroke="#ff6b35" stroke-width="3"/>
+    <path d="M 0 -10 L 0 10 M -10 0 L 10 0" stroke="#ff6b35" stroke-width="2"/>
+  </g>
+  
+  <g transform="translate(290, 100)">
+    <!-- Electrical plug symbol -->
+    <rect x="-8" y="-5" width="16" height="10" fill="#ff6b35"/>
+    <rect x="-3" y="5" width="6" height="8" fill="#2c3e50"/>
+  </g>
+  
+  <g transform="translate(390, 100)">
+    <!-- Circuit symbol -->
+    <rect x="-10" y="-5" width="20" height="10" fill="none" stroke="#ff6b35" stroke-width="2"/>
+    <circle cx="-5" cy="0" r="2" fill="#ff6b35"/>
+    <circle cx="5" cy="0" r="2" fill="#ff6b35"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="250" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#2c3e50">About Our Electrical Team</text>
+</svg>
