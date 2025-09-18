@@ -11,7 +11,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "security-audit": "npm audit",
-    "deploy": "echo 'Deploy to your hosting platform'"
+    "deploy": "node deploy-github-pages.js",
+    "deploy:github": "node deploy-github-pages.js && git add docs/ && git commit -m 'Deploy to GitHub Pages' && git push"
   },
   "keywords": [
     "electrical",
