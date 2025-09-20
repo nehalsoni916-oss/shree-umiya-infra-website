@@ -1,0 +1,69 @@
+✅ Prompt to use on Cursor AI:
+
+Create a complete company profile website using modern HTML5, CSS3, and JavaScript (optionally React if suitable). The website should follow current UI/UX and accessibility standards, be responsive (mobile-first design), and include the following sections:
+
+Home
+
+About Us
+
+Services
+
+Team
+
+Portfolio / Projects
+
+Testimonials
+
+Contact Us (with a secure contact form)
+
+Technical requirements:
+
+Use semantic HTML5
+
+Ensure responsive layout using Flexbox/Grid
+
+Follow WCAG 2.1 accessibility standards
+
+Use HTTPS and sanitize all form inputs
+
+Include basic security features like:
+
+Content Security Policy (CSP)
+
+Input validation and escaping
+
+HTTPS-only assets
+
+Prevent XSS and CSRF attacks
+
+SEO meta tags (title, description, keywords)
+
+Favicon and open graph tags for social media
+
+Lazy loading for images
+
+Use a minimal CSS framework (Tailwind CSS or Bootstrap 5, or write custom CSS)
+
+Optional enhancements:
+
+Dark mode toggle
+
+Animations using AOS.js or GSAP
+
+Smooth scrolling navigation
+
+Contact form should use a backend (Node.js or Python Flask) with proper form validation and protection against spam (honeypot or reCAPTCHA)
+
+Generate the full file structure including:
+
+index.html
+
+styles.css
+
+script.js
+
+Any assets (e.g., images, icons, fonts)
+
+README.md with setup and deployment instructions
+
+The website must run on any device — fully compatible across modern browsers and screen sizes, including mobile phones, tablets, and desktops.
