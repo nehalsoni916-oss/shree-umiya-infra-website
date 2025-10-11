@@ -1,0 +1,32 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="teamGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e9ecef;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="300" height="300" fill="url(#teamGradient3)"/>
+  
+  <!-- Professional headshot placeholder -->
+  <circle cx="150" cy="120" r="60" fill="#e74c3c"/>
+  
+  <!-- Face features -->
+  <circle cx="135" cy="110" r="3" fill="white"/>
+  <circle cx="165" cy="110" r="3" fill="white"/>
+  <path d="M 140 130 Q 150 140 160 130" stroke="white" stroke-width="2" fill="none"/>
+  
+  <!-- Professional attire -->
+  <rect x="120" y="180" width="60" height="80" fill="#2c3e50"/>
+  <rect x="130" y="190" width="40" height="60" fill="#e74c3c"/>
+  
+  <!-- Name tag -->
+  <rect x="100" y="220" width="100" height="30" fill="white" stroke="#2c3e50" stroke-width="2"/>
+  <text x="150" y="240" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">Anita Patel</text>
+  
+  <!-- Professional background elements -->
+  <rect x="50" y="50" width="200" height="20" fill="#2c3e50" opacity="0.1"/>
+  <rect x="50" y="80" width="150" height="15" fill="#2c3e50" opacity="0.1"/>
+  <rect x="50" y="105" width="180" height="10" fill="#2c3e50" opacity="0.1"/>
+</svg>
