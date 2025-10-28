@@ -667,31 +667,7 @@ function initializeBackgroundChanger() {
     setInterval(changeBackground, 6000);
 }
 
-const bgImages = [
-  "assets/bg1.jpg",
-  "assets/bg2.jpg",
-  "assets/bg3.jpg",
-  "assets/bg4.jpg",
-  "assets/bg5.jpg"
-];
 
-let current = 0;
-const bgElement = document.body; // Because we added the class to <body>
-
-function changeBackground() {
-  bgElement.style.backgroundImage = `url('${bgImages[current]}')`;
-  current = (current + 1) % bgImages.length;
-}
-
-// Change every 5 seconds
-changeBackground();
-setInterval(changeBackground, 5000);
-
-// ===== ERROR HANDLING =====
-window.addEventListener('error', function(e) {
-    console.error('JavaScript error:', e.error);
-    // In production, you might want to send this to an error tracking service
-});
 
 window.addEventListener('unhandledrejection', function(e) {
     console.error('Unhandled promise rejection:', e.reason);
