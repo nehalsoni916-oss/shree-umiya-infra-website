@@ -682,34 +682,45 @@ function initializeBackgroundChanger() {
   const body = document.body;
   body.classList.add('bg-slideshow');
 
-  // Preload all images
-  images.forEach(src => {
-    const img = new Image();
-    img.src = src;
-  });
-
   // Create fade overlay
   const overlay = document.createElement('div');
   overlay.classList.add('bg-fade-layer');
   body.appendChild(overlay);
 
-  // Initial image
-  body.style.backgroundImage = `url(${images[index]})`;
+  // Function to start slideshow once first image is loaded
+  function startSlideshow() {
+    body.style.backgroundImage = `url(${images[index]})`;
 
-  function changeBackground() {
-    index = (index + 1) % images.length;
-    overlay.style.backgroundImage = `url(${images[index]})`;
-    overlay.classList.add('fade-in');
+    // Preload remaining images
+    images.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
 
-    setTimeout(() => {
-      body.style.backgroundImage = `url(${images[index]})`;
-      overlay.classList.remove('fade-in');
-    }, 1500); // match CSS transition
+    // Smooth transition between backgrounds
+    function changeBackground() {
+      index = (index + 1) % images.length;
+      overlay.style.backgroundImage = `url(${images[index]})`;
+      overlay.classList.add('fade-in');
+
+      setTimeout(() => {
+        body.style.backgroundImage = `url(${images[index]})`;
+        overlay.classList.remove('fade-in');
+      }, 1500); // match CSS fade time
+    }
+
+    // Start changing every 6 seconds
+    setInterval(changeBackground, 6000);
   }
 
-  setInterval(changeBackground, 6000);
-}
+  // Preload first image before showing
+  const firstImage = new Image();
+  firstImage.src = images[0];
+  firstImage.onload = startSlideshow;
 
+  // Optional: temporary background color while loading
+  body.style.backgroundColor = '#000'; // or a dark shade to blend
+}
 
 window.addEventListener('unhandledrejection', function(e) {
     console.error('Unhandled promise rejection:', e.reason);
