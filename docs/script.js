@@ -24,6 +24,7 @@ function initializeWebsite() {
     initializeCounters();
     initializeLazyLoading();
     initializeAccessibility();
+    initializeBackgroundChanger(); 
     
     console.log('Shree Umiya HR Website initialized successfully');
 }
@@ -638,6 +639,53 @@ function debounce(func, wait, immediate) {
         if (callNow) func.apply(context, args);
     };
 }
+
+function initializeBackgroundChanger() {
+    const images = [
+        'assets/1bg.jpg',
+        'assets/2bg.jpg',
+        'assets/3bg.jpg',
+        'assets/4bg.jpg',
+        'assets/5bg.jpg'
+    ];
+
+    let index = 0;
+    const body = document.body;
+
+    // Add slideshow class so CSS rules apply
+    body.classList.add('bg-slideshow');
+
+    function changeBackground() {
+        body.style.backgroundImage = `url(${images[index]})`;
+        index = (index + 1) % images.length;
+    }
+
+    // Start immediately
+    changeBackground();
+
+    // Change every 6 seconds
+    setInterval(changeBackground, 6000);
+}
+
+const bgImages = [
+  "assets/bg1.jpg",
+  "assets/bg2.jpg",
+  "assets/bg3.jpg",
+  "assets/bg4.jpg",
+  "assets/bg5.jpg"
+];
+
+let current = 0;
+const bgElement = document.body; // Because we added the class to <body>
+
+function changeBackground() {
+  bgElement.style.backgroundImage = `url('${bgImages[current]}')`;
+  current = (current + 1) % bgImages.length;
+}
+
+// Change every 5 seconds
+changeBackground();
+setInterval(changeBackground, 5000);
 
 // ===== ERROR HANDLING =====
 window.addEventListener('error', function(e) {
