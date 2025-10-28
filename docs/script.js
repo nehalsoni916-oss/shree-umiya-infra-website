@@ -639,7 +639,7 @@ function debounce(func, wait, immediate) {
         if (callNow) func.apply(context, args);
     };
 }
-
+/*
 function initializeBackgroundChanger() {
     const images = [
         'assets/1bg.jpg',
@@ -667,6 +667,48 @@ function initializeBackgroundChanger() {
     setInterval(changeBackground, 6000);
 }
 
+*/
+
+function initializeBackgroundChanger() {
+  const images = [
+    'assets/1bg.jpg',
+    'assets/2bg.jpg',
+    'assets/3bg.jpg',
+    'assets/4bg.jpg',
+    'assets/5bg.jpg'
+  ];
+
+  let index = 0;
+  const body = document.body;
+  body.classList.add('bg-slideshow');
+
+  // Preload all images
+  images.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+
+  // Create fade overlay
+  const overlay = document.createElement('div');
+  overlay.classList.add('bg-fade-layer');
+  body.appendChild(overlay);
+
+  // Initial image
+  body.style.backgroundImage = `url(${images[index]})`;
+
+  function changeBackground() {
+    index = (index + 1) % images.length;
+    overlay.style.backgroundImage = `url(${images[index]})`;
+    overlay.classList.add('fade-in');
+
+    setTimeout(() => {
+      body.style.backgroundImage = `url(${images[index]})`;
+      overlay.classList.remove('fade-in');
+    }, 1500); // match CSS transition
+  }
+
+  setInterval(changeBackground, 6000);
+}
 
 
 window.addEventListener('unhandledrejection', function(e) {
