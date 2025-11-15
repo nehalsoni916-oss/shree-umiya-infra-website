@@ -81,6 +81,7 @@ body {
     color: var(--text-primary);
     background-color: var(--bg-primary); 
     transition: background-color var(--transition-normal), color var(--transition-normal);
+    background-color: #000; /* choose a dark shade that fits your images */
 }
 
 /* Focus Styles for Accessibility */
@@ -1439,80 +1440,56 @@ a:hover, a:focus {
 
 
 
-/* Background slideshow styles */
-body.bg-slideshow {
-  background-color: transparent; /* prevents solid color covering slideshow */
-}
-
-.bg-slideshow {
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* optional parallax effect */
-  transition: background-image 1.5s ease-in-out;
-}
-
-
-*/
 
 html, body {
   height: 100%;
 }
+
 
 body.bg-slideshow {
   background-color: transparent !important;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
-  background-attachment: fixed !important;
-  transition: background-image 1.5s ease-in-out !important;
-}
-
-main, section, footer {
-  background: transparent !important;
-}
-
-
-
-
-html, body {
-  height: 100%;
-}
-
-body.bg-slideshow {
-  background-color: transparent !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  background-attachment: fixed !important;
+  /* background-attachment: fixed !important;   <-- optional; disable on mobile if it causes issues */
   transition: none !important;
-  overflow: hidden;
+  /* DO NOT hide overflow — allow page scroll */
+  /* overflow: hidden; */
   position: relative;
 }
 
-/* smooth fade overlay for slideshow */
-.bg-fade-layer {
+
+
+
+/* Make .bg-layer full-screen and ready to cross-fade */
+.bg-layer {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
+  z-index: -9999;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
+  pointer-events: none;
+  will-change: opacity, transform, background-image;
   opacity: 0;
-  transition: opacity 1.5s ease-in-out;
-  z-index: -1; /* ensures it stays behind all content */
+  transition: opacity 1s ease;
+  transform: translateZ(0);
 }
+
 
 /* active fade state */
-.bg-fade-layer.fade-in {
+.bg-layer.show {
   opacity: 1;
 }
 
+.bg-layer.tint::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25); /* subtle dark tint */
+  pointer-events: none;
+}
+
 main, section, footer {
   background: transparent !important;
 }
-
-

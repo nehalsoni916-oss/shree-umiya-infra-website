@@ -639,35 +639,6 @@ function debounce(func, wait, immediate) {
         if (callNow) func.apply(context, args);
     };
 }
-/*
-function initializeBackgroundChanger() {
-    const images = [
-        'assets/1bg.jpg',
-        'assets/2bg.jpg',
-        'assets/3bg.jpg',
-        'assets/4bg.jpg',
-        'assets/5bg.jpg'
-    ];
-
-    let index = 0;
-    const body = document.body;
-
-    // Add slideshow class so CSS rules apply
-    body.classList.add('bg-slideshow');
-
-    function changeBackground() {
-        body.style.backgroundImage = `url(${images[index]})`;
-        index = (index + 1) % images.length;
-    }
-
-    // Start immediately
-    changeBackground();
-
-    // Change every 6 seconds
-    setInterval(changeBackground, 6000);
-}
-
-*/
 
 function initializeBackgroundChanger() {
   const images = [
@@ -678,48 +649,88 @@ function initializeBackgroundChanger() {
     'assets/5bg.jpg'
   ];
 
-  let index = 0;
+  if (!images || images.length === 0) return;
+
   const body = document.body;
   body.classList.add('bg-slideshow');
+  body.style.backgroundColor = '#000'; // fallback while layers load
 
-  // Create fade overlay
-  const overlay = document.createElement('div');
-  overlay.classList.add('bg-fade-layer');
-  body.appendChild(overlay);
+  // Create two layers that will cross-fade
+const layerA = document.createElement('div');
+const layerB = document.createElement('div');
 
-  // Function to start slideshow once first image is loaded
-  function startSlideshow() {
-    body.style.backgroundImage = `url(${images[index]})`;
+layerA.className = 'bg-layer';
+layerB.className = 'bg-layer';
 
-    // Preload remaining images
-    images.forEach(src => {
-      const img = new Image();
-      img.src = src;
-    });
+  // Append layers (A below B so later we toggle classes)
+  body.appendChild(layerA);
+  body.appendChild(layerB);
 
-    // Smooth transition between backgrounds
-    function changeBackground() {
-      index = (index + 1) % images.length;
-      overlay.style.backgroundImage = `url(${images[index]})`;
-      overlay.classList.add('fade-in');
+  // GPU hint
+  layerA.style.transform = 'translateZ(0)';
+  layerB.style.transform = 'translateZ(0)';
 
-      setTimeout(() => {
-        body.style.backgroundImage = `url(${images[index]})`;
-        overlay.classList.remove('fade-in');
-      }, 1500); // match CSS fade time
-    }
-
-    // Start changing every 6 seconds
-    setInterval(changeBackground, 6000);
+  // Preload images function
+  function preload(src) {
+    const img = new Image();
+    img.src = src;
   }
 
-  // Preload first image before showing
-  const firstImage = new Image();
-  firstImage.src = images[0];
-  firstImage.onload = startSlideshow;
+  images.forEach(preload);
 
-  // Optional: temporary background color while loading
-  body.style.backgroundColor = '#000'; // or a dark shade to blend
+  let index = 0;
+  let showingA = true;
+  const crossfadeDuration = 1000; // should match CSS transition (ms)
+  const changeInterval = 6000;    // ms
+
+  // Initialize first visible layer
+  layerA.style.backgroundImage = `url(${images[0]})`;
+  layerA.classList.add('show');
+
+  // Ensure second layer is ready but hidden
+  const nextIndex = () => (index + 1) % images.length;
+
+  function changeBackground() {
+    const next = nextIndex();
+
+    const incoming = showingA ? layerB : layerA;
+    const outgoing = showingA ? layerA : layerB;
+
+    // Put next image into incoming layer immediately
+    incoming.style.backgroundImage = `url(${images[next]})`;
+
+    // Force style calc so transition will run reliably (reflow)
+    // eslint-disable-next-line no-unused-expressions
+    incoming.offsetHeight;
+
+    // Fade incoming in
+    incoming.classList.add('show');
+
+    // After crossfade duration, hide outgoing and finalize
+    setTimeout(() => {
+      outgoing.classList.remove('show');
+      // update pointers
+      index = next;
+      showingA = !showingA;
+    }, crossfadeDuration + 20); // small buffer
+  }
+
+  // Start automatic rotation
+  const intervalId = setInterval(changeBackground, changeInterval);
+
+  document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+      clearInterval(intervalId);
+    } else {
+      // restart - keep it simple by resetting interval (no duplicates)
+      setInterval(changeBackground, changeInterval);
+    }
+  });
+
+  // Optional: expose a stop function if you need to cancel later
+  window.__bgSlideshow = {
+    stop: () => clearInterval(intervalId)
+  };
 }
 
 window.addEventListener('unhandledrejection', function(e) {
