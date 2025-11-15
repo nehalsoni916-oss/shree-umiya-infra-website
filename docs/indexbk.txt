@@ -91,7 +91,7 @@
             <div class="hero-container">
                 <div class="hero-content" data-aos="fade-up">
                     <h1 class="hero-title">Professional Electrical Infrastructure Solutions</h1>
-                    <p class="hero-subtitle">Welcome to our team of expert electrical professionals, dedicated to delivering high-quality installation, maintenance and repair services across residential, commercial and industrial environments.</p>
+                    <p class="hero-subtitle">Specialized in electrical installation, maintenance, and repair services. We handle electrical systems, wiring, lighting, and power distribution for residential, commercial, and industrial clients.</p>
                     <div class="hero-buttons">
                         <a href="#services" class="btn btn-primary" role="button">Our Services</a>
                         <a href="#contact" class="btn btn-secondary" role="button">Get Started</a>
