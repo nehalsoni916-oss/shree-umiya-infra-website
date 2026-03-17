@@ -1180,36 +1180,6 @@ top: 60px; /* match navbar height */
 }
 
 @media (max-width: 768px) {
-    :root {
-        --font-size-5xl: 2.5rem;
-        --font-size-4xl: 2rem;
-        --font-size-3xl: 1.5rem;
-    }
-    
-    .container {
-        padding: 0 var(--spacing-md);
-    }
-    
-.nav-menu {
-    position: fixed;
-    top: 70px; /* below navbar */
-    left: 0;
-    width: 100%;
-    background: var(--bg-primary);
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 10px 15px; /* reduce height */
-    transform: translateY(-120%);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-}
-    .nav-menu.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-    }
     
     .nav-toggle {
         display: flex;
@@ -1506,11 +1476,7 @@ main, section, footer {
     max-width: 1200px;
     margin: 0 auto;
 }
-.nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+
 
 /* HERO OVERLAY FIX */
 .hero {
