@@ -225,6 +225,7 @@ a:hover, a:focus {
     border-bottom: 1px solid var(--border-color);
     z-index: 1000;
     transition: all var(--transition-normal);
+    min-height: 60px;
 }
 
 [data-theme="dark"] .navbar {
@@ -247,14 +248,16 @@ a:hover, a:focus {
 }
 
 .logo {
-    height: 40px;
-    width: auto;
+    height: 30px; /* smaller logo */
 }
 
 .logo-text {
-    font-size: var(--font-size-xl);
-    font-weight: 700;
-    color: var(--text-primary);
+    font-size: 14px; /* smaller text */
+    line-height: 1.2;
+   white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
 }
 
 .nav-menu {
@@ -262,6 +265,7 @@ a:hover, a:focus {
     list-style: none;
     gap: var(--spacing-xl);
     margin: 0;
+top: 60px; /* match navbar height */
 }
 
 .nav-link {
@@ -1186,21 +1190,21 @@ a:hover, a:focus {
         padding: 0 var(--spacing-md);
     }
     
-    .nav-menu {
-        position: fixed;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--bg-primary);
-        flex-direction: column;
-        padding: var(--spacing-xl);
-        box-shadow: var(--shadow-medium);
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: all var(--transition-normal);
-    }
-    
+.nav-menu {
+    position: fixed;
+    top: 70px; /* below navbar */
+    left: 0;
+    width: 100%;
+    background: var(--bg-primary);
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 15px; /* reduce height */
+    transform: translateY(-120%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
     .nav-menu.active {
         transform: translateY(0);
         opacity: 1;
@@ -1540,5 +1544,7 @@ main, section, footer {
 
 /* LOGO FIX */
 .nav-logo {
-    flex-shrink: 0;
+  display: flex;
+    align-items: center;
+    gap: 8px;
 }
