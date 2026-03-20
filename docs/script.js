@@ -36,16 +36,15 @@ function initializeNavigation() {
     const navLinks = document.querySelectorAll('.nav-link');
     
     // Mobile menu toggle
-    if (navToggle && navMenu) {
-        navToggle.addEventListener('click', function() {
-            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-            navToggle.setAttribute('aria-expanded', !isExpanded);
-            navMenu.classList.toggle('active');
-            
-            // Update hamburger animation
-            navToggle.classList.toggle('active');
-        });
-    }
+  navToggle.addEventListener('click', function () {
+    navMenu.classList.toggle('active');
+
+    const expanded = navMenu.classList.contains('active');
+    navToggle.setAttribute('aria-expanded', expanded);
+
+    // Animate hamburger
+    navToggle.classList.toggle('active');
+});
     
     // Smooth scrolling for navigation links
     navLinks.forEach(link => {
