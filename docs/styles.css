@@ -1293,6 +1293,14 @@ a:hover, a:focus {
         right: var(--spacing-md);
         bottom: var(--spacing-md);
     }
+
+  .logo-text {
+    font-size: 14px;
+    max-width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
 }
 
 @media (max-width: 480px) {
